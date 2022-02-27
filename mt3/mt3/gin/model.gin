@@ -7,12 +7,13 @@ from mt3 import spectrograms
 from mt3 import vocabularies
 import seqio
 from t5x import adafactor
+from t5x import models as t5x_models
 
 # ------------------- Loss HParam ----------------------------------------------
 Z_LOSS = 0.0001
 LABEL_SMOOTHING = 0.0
 LOSS_NORMALIZING_FACTOR = None
-models.ContinuousInputsEncoderDecoderModel.loss_fn:
+t5x_models.EncoderDecoderModel:
   z_loss = %Z_LOSS
   label_smoothing = %LABEL_SMOOTHING
   loss_normalizing_factor = %LOSS_NORMALIZING_FACTOR
